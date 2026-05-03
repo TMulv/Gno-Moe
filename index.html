@@ -396,94 +396,6 @@
       line-height: 1.55;
     }
 
-    /* ─── Books Showcase ─────────────────────────────────────────────── */
-    .books {
-      position: relative;
-      overflow: hidden;
-    }
-    .books::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(3,230,91,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .books-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 52px;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 900px) {
-      .books-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 560px) {
-      .books-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    .book-card {
-      position: relative;
-      border-radius: var(--radius-cards);
-      overflow: hidden;
-      aspect-ratio: 2/3;
-      background: var(--color-subtle-surface);
-      cursor: pointer;
-    }
-    .book-card img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s cubic-bezier(.22,.68,0,1.2);
-    }
-    .book-card:hover img { transform: scale(1.05); }
-    .book-card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 16px;
-    }
-    .book-card:hover .book-card-overlay { opacity: 1; }
-    .book-card-title {
-      font-family: var(--font-display);
-      font-size: 16px;
-      line-height: 1.1;
-      color: var(--color-pure-white);
-      letter-spacing: 0.02em;
-    }
-    .book-card-author {
-      font-size: 11px;
-      color: var(--color-muted-ash);
-      margin-top: 4px;
-    }
-    .book-card-badge {
-      position: absolute;
-      top: 10px; right: 10px;
-      padding: 3px 10px;
-      border-radius: var(--radius-tags);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .badge-audio {
-      background: var(--color-deep-violet);
-      color: var(--color-pure-white);
-    }
-    .badge-both {
-      background: var(--color-luminous-green);
-      color: #000;
-    }
-
     /* ─── How It Works ───────────────────────────────────────────────── */
     .how {
       background: var(--gradient-section);
@@ -701,8 +613,6 @@
       section { padding: 60px 24px; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .how-inner { grid-template-columns: 1fr; gap: 40px; }
-      .books-grid { grid-template-columns: repeat(3, 1fr); }
-      .books-header { flex-direction: column; align-items: flex-start; }
       footer { flex-direction: column; gap: 24px; align-items: flex-start; }
       .moe-interstitial { grid-template-columns: 1fr !important; }
       .moe-interstitial > div:first-child { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.07); }
@@ -717,7 +627,6 @@
       .hero { padding: 90px 20px 48px; }
       section { padding: 48px 20px; }
       .features-grid { grid-template-columns: 1fr; }
-      .books-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-stats { gap: 20px; }
       .stat-num { font-size: 26px; }
       .marquee-item { font-size: 13px; padding: 0 14px; }
@@ -750,8 +659,7 @@
   </div>
   <div class="nav-links">
     <a href="#features" class="btn btn-ghost" style="padding:7px 20px;font-size:13px;">Features</a>
-    <a href="#books" class="btn btn-ghost" style="padding:7px 20px;font-size:13px;">Library</a>
-    <a href="#download" class="btn btn-filled" style="padding:7px 20px;font-size:13px;">Download</a>
+<a href="#download" class="btn btn-filled" style="padding:7px 20px;font-size:13px;">Download</a>
   </div>
 </nav>
 
@@ -944,152 +852,6 @@
   </div>
 </div>
 
-<!-- ─── BOOKS ──────────────────────────────────────────────────────── -->
-<section class="books" id="books">
-  <div class="books-header reveal">
-    <div>
-      <div class="section-eyebrow">Your Books. Your Format.</div>
-      <h2 class="section-title">BRING YOUR<br><span class="accent-green">OWN SHELF.</span></h2>
-    </div>
-    <div>
-      <p class="section-body" style="max-width:320px;">Import any .epub and .m4b you already own. Gno Moe pairs them up and keeps your place across both formats.</p>
-      <a href="#download" class="btn btn-ghost" style="margin-top:20px;display:inline-flex;">Get the App</a>
-    </div>
-  </div>
-  <div class="books-grid">
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/10590366-L.jpg" alt="The Great Gatsby"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#1a1508;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:18px;color:var(--color-electric-yellow);line-height:1.1;">THE GREAT GATSBY</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">F. Scott Fitzgerald</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">The Great Gatsby</div>
-        <div class="book-card-author">F. Scott Fitzgerald · 1925</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/10527843-L.jpg" alt="Alice's Adventures in Wonderland"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#0a0a1a;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:14px;color:var(--color-deep-violet);line-height:1.1;">ALICE'S ADVENTURES IN WONDERLAND</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">Lewis Carroll</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">Alice's Adventures in Wonderland</div>
-        <div class="book-card-author">Lewis Carroll · 1865</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/552443-L.jpg" alt="The Wonderful Wizard of Oz"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#0d1a08;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:18px;color:var(--color-luminous-green);line-height:1.1;">THE WIZARD OF OZ</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">L. Frank Baum</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">The Wizard of Oz</div>
-        <div class="book-card-author">L. Frank Baum · 1900</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/12216503-L.jpg" alt="Dracula"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#1a0a0a;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:22px;color:var(--color-vivid-crimson);line-height:1.1;">DRACULA</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">Bram Stoker</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">Dracula</div>
-        <div class="book-card-author">Bram Stoker · 1897</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/8785322-L.jpg" alt="Metropolis"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#0a0a0a;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:22px;color:var(--color-pure-white);line-height:1.1;">METROPOLIS</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">Thea von Harbou</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">Metropolis</div>
-        <div class="book-card-author">Thea von Harbou · 1925</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/36314-L.jpg" alt="The War of the Worlds"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#0d0a1a;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:16px;color:var(--color-sunset-red);line-height:1.1;">THE WAR OF THE WORLDS</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">H.G. Wells</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">The War of the Worlds</div>
-        <div class="book-card-author">H.G. Wells · 1898</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/8610816-L.jpg" alt="Winnie-the-Pooh"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#1a1508;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:18px;color:var(--color-electric-yellow);line-height:1.1;">WINNIE-THE-POOH</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">A.A. Milne</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">Winnie-the-Pooh</div>
-        <div class="book-card-author">A.A. Milne · 1926</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/8237052-L.jpg" alt="Peter Pan"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#08101a;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:22px;color:var(--color-deep-violet);line-height:1.1;">PETER PAN</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">J.M. Barrie</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">Peter Pan</div>
-        <div class="book-card-author">J.M. Barrie · 1911</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/13301713-L.jpg" alt="A Tale of Two Cities"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#0a0d12;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:16px;color:var(--color-pure-white);line-height:1.1;">A TALE OF TWO CITIES</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">Charles Dickens</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">A Tale of Two Cities</div>
-        <div class="book-card-author">Charles Dickens · 1859</div>
-      </div>
-    </div>
-
-    <div class="book-card reveal">
-      <img src="https://covers.openlibrary.org/b/id/12393037-L.jpg" alt="The Call of the Wild"
-        onerror="this.style.display='none';this.parentElement.querySelector('.book-fallback').style.display='flex'" />
-      <div class="book-fallback" style="display:none;position:absolute;inset:0;background:#100a08;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;text-align:center;">
-        <div style="font-family:var(--font-display);font-size:16px;color:var(--color-sunset-red);line-height:1.1;">THE CALL OF THE WILD</div>
-        <div style="font-size:11px;color:var(--color-muted-ash);">Jack London</div>
-      </div>
-      <div class="book-card-overlay">
-        <div class="book-card-title">The Call of the Wild</div>
-        <div class="book-card-author">Jack London · 1903</div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- ─── HOW IT WORKS ──────────────────────────────────────────────── -->
 <section class="how" id="how">
