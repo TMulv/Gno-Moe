@@ -255,7 +255,6 @@
       width: clamp(280px, 36vw, 520px);
       height: auto;
       filter: drop-shadow(0 0 60px rgba(110,96,238,0.35));
-      mix-blend-mode: screen;
     }
     .moe-ring {
       position: absolute;
@@ -531,7 +530,6 @@
       margin: 0 auto 40px;
       filter: drop-shadow(0 0 40px rgba(110,96,238,0.5));
       animation: floatMoe 4s ease-in-out infinite;
-      mix-blend-mode: screen;
     }
     .cta-title {
       font-family: var(--font-display);
@@ -705,7 +703,7 @@
         poster="./assets/moe.png"
         style="width:clamp(280px,36vw,520px);height:auto;filter:drop-shadow(0 0 60px rgba(110,96,238,0.35));"
       >
-        <source src="./assets/moe-empty.webm" type="video/webm">
+        <source src="./assets/moe-transparent.webm" type="video/webm">
       </video>
     </div>
   </div>
@@ -844,10 +842,9 @@
         z-index:1;
         filter:drop-shadow(0 0 80px rgba(110,96,238,0.4));
         animation:floatMoe 5s ease-in-out infinite;
-        mix-blend-mode:screen;
       "
     >
-      <source src="./assets/moe-empty.webm" type="video/webm">
+      <source src="./assets/moe-transparent.webm" type="video/webm">
     </video>
   </div>
 </div>
@@ -925,7 +922,7 @@
 <!-- ─── DOWNLOAD CTA ───────────────────────────────────────────────── -->
 <section class="cta-section" id="download">
   <video class="cta-moe" autoplay loop muted playsinline poster="./assets/moe.png">
-    <source src="./assets/moe-empty.webm" type="video/webm">
+    <source src="./assets/moe-transparent.webm" type="video/webm">
   </video>
   <h2 class="cta-title reveal">
     GET<br>
